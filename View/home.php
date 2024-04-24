@@ -14,10 +14,13 @@
 
 <body>
   <header>
-    <?php require 'View/header.php'; ?>
+    <?php
+
+    require 'View/header.php';
+    ?>
   </header>
   <main class="container">
-   
+
     <div class="post-container flex-all flex-wrap">
     </div>
 

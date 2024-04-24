@@ -14,7 +14,9 @@
 <body>
   <header>
     <?php
-    require 'View/header.php'; ?>
+    
+    require 'View/header.php';
+    ?>
   </header>
   <main class="container">
     <div class="profile-view flex-all flex-column">

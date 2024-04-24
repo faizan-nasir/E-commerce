@@ -1,7 +1,5 @@
 <?php
 
-use Dotenv\Util\Str;
-
 /**
  * Class to perform all database based operations.
  */
@@ -35,7 +33,7 @@ class Database {
   }
 
   /**
-   * Function to close the database connection
+   * Function to close the database connection.
    *
    * @return void
    */
@@ -93,7 +91,7 @@ class Database {
   }
 
   /**
-   * Undocumented function
+   * Function to update into any table with any nu,ber of values using email.
    *
    * @param string $table_name
    *   Name of the table.
@@ -221,6 +219,7 @@ class Database {
    *
    * @param string $product_id
    *   Product id of the product to get details.
+   *
    * @return mixed
    *   Returns an associate array on success and false otherwise.
    */
@@ -244,6 +243,7 @@ class Database {
    *   Email id of the user
    * @param string $product_id
    *   Product id of the product to check the cart item.
+   *
    * @return bool
    *   Returns true if exists and false otherwise.
    */
@@ -264,12 +264,12 @@ class Database {
    * Function to check if a cart exists for a user.
    *
    * @param string $email
-   *   Email id of the user
+   *   Email id of the user.
+   *
    * @return bool
    *   Returns true if exists and false otherwise.
    */
-  public function isExistingCart(string $email)
-  {
+  public function isExistingCart(string $email) {
     $this->sql = "SELECT * FROM cart WHERE email = '{$email}';";
     $this->stmt = $this->pdo->prepare($this->sql);
     try {
@@ -288,9 +288,10 @@ class Database {
    * @param string $email
    *   Email of the user.
    * @param string $product_id
-   *   Product id of the product to check quantity
+   *   Product id of the product to check quantity.
+   *
    * @return mixed
-   *   returns associative array containing quantity on success and false otherwise.
+   *   Returns associative array containing quantity on success and false otherwise.
    */
   public function getProductQuantity(string $email, string $product_id) {
     $this->sql = "SELECT quantity FROM cart WHERE product_id = {$product_id} and email = '{$email}';";
@@ -309,7 +310,8 @@ class Database {
    * Function to get the entire cart of the user along with the products.
    *
    * @param string $email
-   *   Email of the user
+   *   Email of the user.
+   *
    * @return array|false
    *   Returns associative array of results on success and false otherwise.
    */
@@ -335,8 +337,9 @@ class Database {
    *   Product ID of the product to increase quantity of.
    * @param integer $quantity
    *   Quantity to be updated.
+   *
    * @return bool
-   *   returns true on success and false otherwise.
+   *   Returns true on success and false otherwise.
    */
   public function updateItemQuantity(string $email, string $product_id, int $quantity) {
     $this->sql = "UPDATE cart SET quantity = {$quantity} WHERE email='{$email}' AND product_id = {$product_id};";
@@ -354,8 +357,9 @@ class Database {
    *
    * @param string $email
    *   Email id of the user.
+   *
    * @return bool
-   *   returns true on success and false otherwise.
+   *   Returns true on success and false otherwise.
    */
   public function clearCart(string $email) {
     $this->sql = "DELETE FROM cart WHERE email = '{$email}';";

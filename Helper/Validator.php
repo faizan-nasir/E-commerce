@@ -13,12 +13,13 @@ class Validator {
   }
 
   /**
-   * Function to validate email
+   * Function to validate email.
    *
    * @param string $email
    *   Email id of the user.
-   * @return boolean
-   *   returns true if email is valid and false otherwise
+   *
+   * @return bool
+   *   returns true if email is valid and false otherwise.
    */
   public function isValidEmail(string $email) {
     if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
@@ -40,11 +41,12 @@ class Validator {
   }
 
   /**
-   * Function to validate the name
+   * Function to validate the name.
    *
    * @param string $name
    *   Name provided by user.
-   * @return boolean
+   *
+   * @return bool
    *   returns true if name is valid and false otherwise.
    */
   public function isValidName(string $name) {
@@ -55,11 +57,12 @@ class Validator {
   }
 
   /**
-   * Function to validate the password
+   * Function to validate the password.
    *
    * @param string $password
    *   password provided by user.
-   * @return boolean
+   *
+   * @return bool
    *   returns true if password is valid and false otherwise.
    */
   public function isValidPassword(string $password) {
@@ -74,7 +77,8 @@ class Validator {
    *
    * @param string $email
    *   email provided by the user.
-   * @return boolean
+   *
+   * @return bool
    *   returns true if user exists and false otherwise.
    */
   public function isExistingUser(string $email) {

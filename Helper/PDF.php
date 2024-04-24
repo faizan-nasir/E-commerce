@@ -28,6 +28,7 @@ class PDF {
    *   Associative array of cart items.
    * @param string $order_id
    *   Order id of the order.
+   * 
    * @return bool
    *   Returns true on success and false otherwise.
    */

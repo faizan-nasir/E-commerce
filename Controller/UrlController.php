@@ -20,8 +20,7 @@ class UrlController extends ActionController {
    *
    * @return void
    */
-  private function destroy_session()
-  {
+  private function destroy_session() {
     session_start();
     session_unset();
     session_destroy();

@@ -13,7 +13,10 @@
 
 <body>
   <header>
-    <?php require 'View/header.php'; ?>
+    <?php
+
+    require 'View/header.php';
+    ?>
   </header>
   <main class="container">
     <div class="profile-view">

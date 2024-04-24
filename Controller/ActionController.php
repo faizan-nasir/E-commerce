@@ -3,8 +3,7 @@
 /**
  * Class to set variables for rendering and controlling form actions.
  */
-class ActionController
-{
+class ActionController {
   /**
    * Function to control register form action.
    *
@@ -71,7 +70,6 @@ class ActionController
     $cls = 'red';
 
     if (isset($_POST['submit'])) {
-      var_dump($_POST);
       if (empty($_POST['otp']) || !preg_match("/^\d{4}$/", $_POST['otp'])) {
         $msg = 'Invalid OTP';
       }
@@ -158,7 +156,6 @@ class ActionController
     $cls = 'red';
     if (isset($_POST['submit'])) {
       $db_obj = new Database($_ENV['HOST_NAME'], $_ENV['DB_NAME'], $_ENV['USER_NAME'], $_ENV['DB_PASSWORD']);
-      echo "works";
       $res = $db_obj->selectUser('user', $_POST['email']);
       if ($res) {
         if (

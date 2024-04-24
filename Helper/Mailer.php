@@ -5,8 +5,7 @@ use PHPMailer\PHPMailer\PHPMailer;
 /**
  * Class to generate OTP and send mail to user.
  */
-class Mailer
-{
+class Mailer {
 
   private $otp,$mail;
 
@@ -49,6 +48,7 @@ class Mailer
    *
    * @param string $email
    *   Email id of the recipient.
+   *
    * @return bool
    *   Returns true if email was successfully delivered and false otherwise.
    */
@@ -81,6 +81,7 @@ class Mailer
    *   Email id of the recipient
    * @param string $order_id
    *   Order Id of the bill
+   * 
    * @return bool
    *   Returns true if email was successfully delivered and false otherwise.
    */
